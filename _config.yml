@@ -1,6 +1,6 @@
-name: tekzip.com
-description: An IT Technology Blog
-meta_description: "Your New Jekyll Site, Blogging about stuffs"
+name: TekZip
+description: 一个码农的博客
+meta_description: "杨慧勇的个人博客，关注软件开发，网站后端技术"
 
 markdown: redcarpet
 pygments: true
