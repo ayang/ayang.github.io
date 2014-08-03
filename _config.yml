@@ -1,6 +1,6 @@
 name: TekZip
 description: 一个码农的博客
-meta_description: "杨慧勇的个人博客，关注软件开发，网站后端技术"
+meta_description: "关注软件开发，网站后端技术"
 
 markdown: redcarpet
 highlighter: true
