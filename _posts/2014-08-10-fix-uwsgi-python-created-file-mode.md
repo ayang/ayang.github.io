@@ -7,7 +7,8 @@ tags: uwsgi, umask
 
 总是发现服务器 django 进程生成的图片文件夹的权限不正常，所有文件夹都是777，查看 uwsgi 进程的 umask 终于找出了原因，umask=0, My God.
 关于 umask 的解释请看这里 http://man7.org/linux/man-pages/man2/umask.2.html
-## 解决方法
+
+### 解决方法
 
 啥也不说了，在 uwsgi.ini 里加上一句：
 
