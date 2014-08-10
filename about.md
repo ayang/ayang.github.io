@@ -3,7 +3,7 @@ layout: page
 title: 关于我
 ---
 
-自由软件开发者，野生码农，童星梦工厂网站(happystar61.com)作者，对各种开发技术感兴趣。
+自由软件开发者，野生码农，[童星梦工厂](happystar61.com)作者。目前主要从事 Web 前后端开发，Qt 桌面软件开发，对各种新技术感兴趣。可以通过Email联系我。
 
 + Github: [https://github.com/ayang](https://github.com/ayang)
 + Google+: [https://plus.google.com/+BruceYangtek](https://plus.google.com/+BruceYangtek)
