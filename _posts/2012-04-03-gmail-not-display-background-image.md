@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Gmail中的图片和背景都看不到了
 date: 2012-04-03 23:52
 tags: gmail
