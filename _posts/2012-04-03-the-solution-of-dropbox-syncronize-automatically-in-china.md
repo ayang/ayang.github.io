@@ -5,6 +5,8 @@ date: 2012-04-03 22:10:26.641000
 tags: Dropbox, GFW
 ---
 
+**本文内容已经更新，方法目前可用**，但需要配合hosts大法。请自行搜索dropbox hosts, 并将notify*.dropbox.com的ip改为本文提供服务的ip。一般是本机比较方便。
+
 最近由于想要使用Dropbox的多人协作功能，就发现Dropbox不能自动同步其他机器上产生的文件变化，经过一番搜索，发现原来是GFW在作怪（GFW和GD的性质和用心我们心知肚明，就不在这里评价了）。月光博客发布了[解决Dropbox无法实时更新的问题](http://www.williamlong.info/archives/2585.html)分析了产生这个问题的原因并提出一个有效的解决方案。但是在使用时我发现，我找不到一个优良稳定的代理服务器，也没工夫去学习privoxy软件的配置和使用，而且我要将解决方案提供给我的合伙人，一个复杂的方案是不能接受的。经过一番研究，提出如下比较**简单**的办法：
 
 分析
@@ -32,65 +34,6 @@ tags: Dropbox, GFW
 
 代码
 ======
-	#!/usr/bin/env python
-	# -*- coding: utf-8 -*-
+<script src="https://gist.github.com/ayang/3199360.js"></script>
 
-	import tornado.httpserver
-	import tornado.ioloop
-	import tornado.options
-	import tornado.web
-	from tornado.options import define, options
-	from tornado import httpclient
-
-
-	define("port", default=8888, help="run on the given port", type=int)
-
-
-	class Application(tornado.web.Application):
-	    def __init__(self):
-	        handlers = [
-	            (r"/subscribe", NotifyHandler),
-	            (r"/.*", HomeHandler),
-	        ]
-	        settings = dict(
-	            debug=True,
-	        )
-	        self.debug = True
-	        tornado.web.Application.__init__(self, handlers, **settings)
-
-
-	class HomeHandler(tornado.web.RequestHandler):
-	    def get(self):
-	        self.set_header("Content-Type", "text/plain")
-	        self.write("Hello from Tornado!")
-
-
-	class NotifyHandler(tornado.web.RequestHandler):
-	    @tornado.web.asynchronous
-	    def get(self):
-	        self.set_header("Content-Type", "text/plain")
-	        url = xxxxx #关键代码还是不贴出来了，人怕出名猪怕壮，要是大多数人会用了，估计这个方法死期不远矣!
-	        http_client = httpclient.AsyncHTTPClient()
-	        http_client.fetch(url, self.handle_response, request_timeout=100.0)
-
-	    def handle_response(self, response):
-	        if response.error:
-	            print "Can not connect."
-	            self.write("{\"ret\": \"new\"}")
-	        else:
-	            print "Connect Successfull."
-	            self.write(response.body)
-	        self.finish()
-
-
-	def main():
-	    tornado.options.parse_command_line()
-	    http_server = tornado.httpserver.HTTPServer(Application())
-	    http_server.listen(options.port)
-	    tornado.ioloop.IOLoop.instance().start()
-
-	if __name__ == "__main__":
-	    main()
-
-
-**版权声明：**原创作品，允许转载，转载请务必以超链接形式标明原始出处，否则将追究法律责任。GiveupTech.com
+**版权声明：** 原创作品，允许转载，转载请务必以超链接形式标明原始出处，否则将追究法律责任。 Tekzip.com
