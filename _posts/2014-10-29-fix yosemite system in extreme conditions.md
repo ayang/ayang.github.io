@@ -22,7 +22,7 @@ tags: osx, mac
 
 4. 在Mbp进入磁盘工具，挂载Yosemite安装包。这一步应该也可以用命令行方式实现，但我当时还没想到，我是这样操作的：1)随便点击一个分区，再点恢复标签，在源磁盘的地方可以选择一个映像，点击选择Yosemite安装包的dmg映像，此时左侧应该能看到这个映像已经挂载，如果没有挂载，随便选一个分区作为目标，再点恢复应该就能挂载。此时挂载的是一块磁盘，在左侧双击该磁盘就会挂载分区。由于我这次想格盘重装，我把磁盘格为了一个分区。如果手头有一个8G的U盘，下一步就简单了，如果没有，你需要：硬盘划分为两个分区，后面一个大小是8G，两个分区的卷标分别是`Macitosh SSD`和`SSD8G`。
 
-5. 退出磁盘工具，进入命令行工具，使用`ls /Volumes`应该已经能看到一个磁盘分区名字叫`Install Yosemite`。用命令行工具制作启动盘。如果你有8GU盘，SSD8G改为你的U盘。详细的安装盘制作方法参考[http://www.iplaysoft.com/osx-yosemite-usb-install-drive.html]。
+5. 退出磁盘工具，进入命令行工具，使用`ls /Volumes`应该已经能看到一个磁盘分区名字叫`Install Yosemite`。用命令行工具制作启动盘。如果你有8GU盘，SSD8G改为你的U盘。详细的安装盘制作方法参考[http://www.iplaysoft.com/osx-yosemite-usb-install-drive.html]()。
 
 	sudo /Volumes/<移动硬盘>/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/SSD8G --applicationpath /Volumes/<移动硬盘>/Install\ OS\ X\ Yosemite.app --nointeraction
 
