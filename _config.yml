@@ -9,5 +9,5 @@ paginate: 15
 baseurl: /
 
 # Details for the RSS feed generator
-url:            'tekzip.com'
+url:            'ayang.github.io'
 author:         'Bruce Yang'

@@ -1,6 +1,6 @@
 # About
 
-This is source code of my blog [TekZip](http://tekzip.me).
+This is source code of my blog [ayang.github.io](http://ayang.github.io).
 
 ## How to use it
 
